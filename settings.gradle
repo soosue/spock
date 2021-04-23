@@ -26,6 +26,7 @@ def accessKeysAreMissing() {
   return !(System.env['GRADLE_ENTERPRISE_ACCESS_KEY']?.trim())
 }
 
+//TODO: Failed to parse GRADLE_ENTERPRISE_ACCESS_KEY environment variable: value is malformed (expected format: 'server-host=access-key' or 'server-host1=access-key1;server-host2=access-key2').
 gradleEnterprise {
   buildScan {
     captureTaskInputFiles = true
