@@ -49,7 +49,7 @@
 ## Build-tool dependencies used
 
 ### Gradle/Grails
-    compile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
+    implementation 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
 
 ### Apache Maven
     <dependency>

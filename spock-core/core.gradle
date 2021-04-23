@@ -18,20 +18,21 @@ Spock is inspired from JUnit, jMock, RSpec, Groovy, Scala, Vulcans, and other fa
 configurations { coreConsoleRuntime }
 
 dependencies {
-  compile libs.groovy // easiest way to add Groovy dependency to POM
-  compile libs.junitPlatform
-  compile libs.junitPlatformTestkit, optional
-  compile libs.hamcrest
+  api libs.groovy // easiest way to add Groovy dependency to POM
+  api libs.opentest4j
+  api libs.junitPlatform  //TODO: with implementation failure with "org.junit.platform.engine.DiscoverySelector" in ':spock-spring:compileTestGroovy' (and junit 4)
+  implementation libs.junitPlatformTestkit, optional
+  implementation libs.hamcrest
 
-  compile libs.jetbrainsAnnotations, optional
-  compile libs.asm, optional
-  compile libs.bytebuddy, optional
-  compile libs.cglib, optional
-  compile libs.objenesis, optional
+  compileOnly libs.jetbrainsAnnotations
+  implementation libs.asm, optional
+  implementation libs.bytebuddy, optional
+  implementation libs.cglib, optional
+  implementation libs.objenesis, optional
 
   if (variant == 2.5) {
     dependencies {
-      compile project(':spock-groovy2-compat')
+      api project(':spock-groovy2-compat')
     }
   }
 

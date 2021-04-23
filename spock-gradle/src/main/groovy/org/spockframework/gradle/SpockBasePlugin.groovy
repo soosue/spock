@@ -44,6 +44,7 @@ class SpockConfigArgumentProvider implements CommandLineArgumentProvider, Named 
   @PathSensitive(PathSensitivity.RELATIVE)
   final File configFile
 
+  @org.gradle.api.tasks.Internal
   @Override
   String getName() {
     return 'spock.configuration'

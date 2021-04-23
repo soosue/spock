@@ -20,21 +20,21 @@ plugins {
 }
 
 dependencies {
-  compile "org.springframework.boot:spring-boot-starter-data-jpa"
-  compile "org.springframework.boot:spring-boot-starter-web"
+  implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+  implementation "org.springframework.boot:spring-boot-starter-web"
 
   // Remove this when Spring Boot 2 is upgraded to 2.1.x version
-  compile "org.hibernate:hibernate-core:5.3.7.Final"
+  implementation "org.hibernate:hibernate-core:5.3.7.Final"
 
-  testCompile "org.springframework.boot:spring-boot-starter-test"
-  testCompile project(":spock-core")
-  testCompile project(":spock-spring")
+  testImplementation "org.springframework.boot:spring-boot-starter-test"
+  testImplementation project(":spock-core")
+  testImplementation project(":spock-spring")
 
   if (javaVersion >= 9) {
-    testCompile libs.jaxb
+    testImplementation libs.jaxb
   }
 
-  runtime "com.h2database:h2"
+  runtimeOnly "com.h2database:h2"
 
 }
 

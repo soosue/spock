@@ -10,19 +10,21 @@ configurations {
 }
 
 dependencies {
-  compile libs.groovyJmx
+  implementation libs.groovyJmx
 
-  testCompile project(":spock-core")
-  testCompile libs.groovySql  //for groovy.sql.Sql
-  testCompile(libs.groovyTest) {  //for groovy.test.NotYetImplemented
+  testImplementation project(":spock-core")
+  testImplementation libs.groovySql  //for groovy.sql.Sql
+  testImplementation (libs.groovyTest) {  //for groovy.test.NotYetImplemented
     exclude group: 'junit'
   }
+  testImplementation libs.junitPlatformTestkit
+  testImplementation libs.hamcrest
 
-  testRuntime libs.asm
-  testRuntime libs.bytebuddy
-  testRuntime libs.cglib
-  testRuntime libs.objenesis
-  testRuntime libs.h2database
+  testRuntimeOnly libs.asm
+  testRuntimeOnly libs.bytebuddy
+  testRuntimeOnly libs.cglib
+  testRuntimeOnly libs.objenesis
+  testRuntimeOnly libs.h2database
 
   groovyConsole groovyConsoleExtraDependencies
   jacocoAgentRuntime libs.jacocoAgent
